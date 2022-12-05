@@ -13,6 +13,7 @@ EXTRA_LIBS = -lresolv -lpthread
 ## Remember to change theese to suit your environment!!
 INCLUDES = -I/usr/local/include/libcl
 CRYPTLIB = /usr/local/lib/libcl.a
+CRYPTLIB = -lcl
 
 pemtrans: pemtrans.c
 	cc $(INCLUDES) $(LIBS) -o pemtrans pemtrans.c $(CRYPTLIB) \

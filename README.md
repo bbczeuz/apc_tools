@@ -23,3 +23,15 @@ pemtrans is essentially exactly what we need but the result doesn't work yet wit
  * `dd if=server-apc.p15 of=server.p15 bs=228 skip=1`
 * Add APC header to a standard p15 file containing a 1024 bit key
  * `apcheader server.p15 server-apc.p15 1`
+
+## Build
+(in Fedora 37, There will be lots of warnings, but it will build)
+```
+yum install cryptlib cryptlib-devel
+make
+```
+
+## Convert openssl certificates to p15 (PKCS #15) Format for APC/Schneider UPS Network Management Card 2
+```
+./pemtrans privatekey.crt certificate.crt outfile.p15 "commonname.example.com" "password"
+```
